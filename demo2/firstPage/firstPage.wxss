@@ -1,0 +1,28 @@
+/* firstPage/firstPage.wxss */
+.page-body {
+  padding: 20rpx 30px;
+}
+.firstPage1{
+  text-align: center;
+  padding: 30rpx 0;
+  color:black;
+}
+.firstPage2{
+  
+  padding:5rpx 20rpx 40rpx 20rpx;
+  border-bottom-style: solid;
+  border-width: 1.5px;
+}
+.rowCenter{
+  width:375rpx;
+  text-align:center;
+}
+.point{
+  height:40rpx;
+  width: 130rpx;
+  margin: 20rpx 20rpx;
+  font-size: 70%;
+  color:beige;
+  border-radius: 15rpx;
+  text-align: center;
+}

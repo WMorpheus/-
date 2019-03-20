@@ -1,0 +1,39 @@
+<!-- This is our View -->
+<view style='display:flex;flex-direction:row;height:70rpx;margin:0 40rpx 0 40rpx;border-bottom-style:solid;border:1rpx'>
+  <image src='../image/ai.png' style='height:55rpx;width:90rpx'></image>
+  <!-- <image src='../image/fangdajing.png' style='height:50rpx;width:55rpx;border:15rpx solid #557a83;border-right-style:none;border-radius:40rpx 0 0 40rpx;'></image> -->
+  <input style='border:solid 1rpx;border-radius:25rpx;height:40rpx;width:570rpx;font-size:75%;padding-left:20rpx' bindconfirm="jumpToStock" placeholder=" 请输入股票代码"></input>
+</view>
+<view style='display: flex;flex-direction: column;align-items: center;padding:30rpx;background-color:#b3ced4' >
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+  <text style='font-size:85%;letter-spacing:5rpx;color:#484848'>{{userInfo.nickName}}</text>
+  <text style='font-size:85%;letter-spacing:5rpx;color:#484848'>股票关注数:{{num}}</text>
+</view>
+
+<view style='margin:10rpx 0'>
+  <view style='margin:0 20rpx'>
+      <view style='padding:20rpx 0;flex-direction:row;display:flex;font-size:85%'>
+        <view class='rowCenter'>股票代码</view>
+        <view class='rowCenter'>涨</view>
+        <view class='rowCenter'>跌</view>
+        <view style='width:10%;text-align:center;'></view>
+     </view>
+
+     <block wx:for="{{mystocks}}" wx:for-index="ind">
+        <view class="stockLine">
+          <view class='rowCenter' bindtap='jumpByTap' id="{{item.stockcode}}">
+            <view style='text-align:center; font-size:1em;line-height:0.8em'>{{item.stockname}}
+              <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>
+                {{item.stockcode}}
+              </view>           
+            </view>      
+          </view>
+          <view class='rowCenter' style='color:red'>{{item.up}}</view>
+          <view class='rowCenter' style='color:green'>{{item.down}}</view>
+          <view style='width:10%;text-align:center' id="{{item.stockcode}}" data-index="{{ind}}" bindtap='deleteStock'>
+            <image src='../image/jian.png'  style='height:30rpx;width:30rpx'></image>
+          </view>
+        </view>
+      </block>
+    </view>     
+  </view>

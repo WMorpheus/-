@@ -1,0 +1,126 @@
+<!--suggest/suggest.wxml-->
+
+  <!-- <view style='background-color:#C0C0C0'>
+    <view style='text-align: center;padding: 30rpx 0'>{{time}}</view>
+  </view> -->
+<view style='display:flex;flex-direction:row;height:70rpx;margin:0 40rpx 0 40rpx;border-bottom-style:solid;border:1rpx'>
+  <image src='../image/ai.png' style='height:55rpx;width:90rpx'></image>
+  <!-- <image src='../image/fangdajing.png' style='height:50rpx;width:55rpx;border:15rpx solid #557a83;border-right-style:none;border-radius:40rpx 0 0 40rpx;'></image> -->
+  <input style='border:solid 1rpx;border-radius:25rpx;height:40rpx;width:570rpx;font-size:75%;padding-left:20rpx' bindconfirm="jumpToStock" placeholder=" 请输入股票代码"></input>
+</view>
+ 
+  <view style='letter-spacing:8px;text-align:center;font-size:120%;padding:25rpx;border-bottom:solid 1.5px #888888'>
+      今日推荐
+</view>
+
+  
+<view style='display:flex;flex-direction:row;margin:40rpx 0 0 0'>
+  <view style='height:40rpx;width:150rpx;background-color:#bf4e5b;color:white;font-size:80%;text-align:center;padding:7rpx'>优选股</view>
+</view>
+<view style='margin:10rpx 0;border-bottom:solid 1.5px #888888'>
+  <view style='margin:0 20rpx'>
+      <view style='padding:20rpx 0;flex-direction:row;display:flex;font-size:85%'>
+        <view class='rowCenter'>股票代码</view>
+        <view class='rowCenter'>涨</view>
+        <view class='rowCenter'>跌</view>
+        <view style='width:10%;text-align:center;'></view>
+     </view>
+      <block wx:for="{{updata}}" wx:for-index="ind">
+        <view wx:if="{{showmore1}}" class="{{ind>2? 'hide':'stockLine'}}">
+          <view class='rowCenter' bindtap='jumpByTap' id="{{item.stockcode}}">
+            <view style='text-align:center; font-size:1em;line-height:0.8em'>{{item.stockname}}
+              <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>
+                {{item.stockcode}}
+              </view>           
+            </view>      
+          </view>
+          <view class='rowCenter' style='color:red'>{{item.up}}</view>
+          <view class='rowCenter' style='color:green'>{{item.down}}</view>
+          <view style='width:10%;text-align:center' id="{{item.stockcode}}" bindtap="addStock">
+            <image src='../image/add.png'  style='height:30rpx;width:30rpx'></image>
+          </view>
+        </view>
+        <view wx:else class="stockLine">
+          <view class='rowCenter' bindtap='jumpByTap' id="{{item.stockcode}}">
+            <view style='text-align:center; font-size:1em;line-height:0.8em'>{{item.stockname}}
+              <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>
+                {{item.stockcode}}
+              </view>           
+            </view>      
+          </view>
+          <view class='rowCenter' style='color:red'>{{item.up}}</view>
+          <view class='rowCenter' style='color:green'>{{item.down}}</view>
+          <view style='width:10%;text-align:center' id="{{item.stockcode}}" bindtap="addStock">
+            <image src='../image/add.png'  style='height:30rpx;width:30rpx'></image>
+          </view>
+        </view>
+      </block>
+
+
+      <view style='display:flex;flex-direction:row;justify-content:space-between;margin:20rpx 0'>
+        <view></view>
+        <view style='display:flex;flex-direction:column' bindtap='jumpToMore1'>
+          <text style='font-size:75%;color:#888888'>{{buttontext1}}</text>
+        </view>
+      </view>
+
+
+    </view>     
+  </view>
+<view style='display:flex;flex-direction:row;margin:40rpx 0 0 0'>
+  <view style='height:40rpx;width:150rpx;background-color:#327751;color:white;font-size:80%;text-align:center;padding:7rpx'>风险股</view>
+</view>
+
+  <view style='margin:10rpx 0'>
+    <view style='margin:0 20rpx'>
+      <view style='padding:20rpx 0;flex-direction:row;display:flex;font-size:85%'>
+        <view class='rowCenter'>股票代码</view>
+        <view class='rowCenter'>涨</view>
+        <view class='rowCenter'>跌</view>
+        <view style='width:10%;text-align:center;'></view>
+      </view>
+
+      <block wx:for="{{downdata}}" wx:for-index="ind">
+        <view wx:if="{{showmore2}}" class="{{ind>2? 'hide':'stockLine'}}">
+          <view class='rowCenter' bindtap='jumpByTap' id="{{item.stockcode}}">
+            <view style='text-align:center; font-size:1em;line-height:0.8em'>{{item.stockname}}
+              <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>
+                {{item.stockcode}}
+              </view>           
+            </view>      
+          </view>
+          <view class='rowCenter' style='color:red'>{{item.up}}</view>
+          <view class='rowCenter' style='color:green'>{{item.down}}</view>
+          <view style='width:10%;text-align:center' id="{{item.stockcode}}" bindtap="addStock">
+            <image src='../image/add.png'  style='height:30rpx;width:30rpx'></image>
+          </view>
+        </view>
+        <view wx:else class="stockLine">
+          <view class='rowCenter' id="{{item.stockcode}}" bindtap='jumpByTap'>
+            <view style='text-align:center; font-size:1em;line-height:0.8em'>{{item.stockname}}
+              <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>
+                {{item.stockcode}}
+              </view>           
+            </view>      
+          </view>
+          <view class='rowCenter' style='color:red'>{{item.up}}</view>
+          <view class='rowCenter' style='color:green'>{{item.down}}</view>
+          <view style='width:10%;text-align:center' id="{{item.stockcode}}" bindtap="addStock">
+            <image src='../image/add.png'  style='height:30rpx;width:30rpx'></image>
+          </view>
+        </view>
+      </block>
+
+
+      <view style='display:flex;flex-direction:row;justify-content:space-between;margin:20rpx 0'>
+        <view></view>
+        <view style='display:flex;flex-direction:column' bindtap='jumpToMore2'>
+          <text style='font-size:75%;color:#888888'>{{buttontext2}}</text>
+        </view>
+      </view>
+    
+    </view>     
+  </view>
+
+  
+

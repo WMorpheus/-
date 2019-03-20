@@ -1,0 +1,42 @@
+<!--addition/addition.wxml-->
+<view style='display:flex;flex-direction:row;height:70rpx;margin:0 40rpx 0 40rpx;border-bottom-style:solid;border:1rpx'>
+  <image src='../image/ai.png' style='height:55rpx;width:90rpx'></image>
+  <!-- <image src='../image/fangdajing.png' style='height:50rpx;width:55rpx;border:15rpx solid #557a83;border-right-style:none;border-radius:40rpx 0 0 40rpx;'></image> -->
+  <input style='border:solid 1rpx;border-radius:25rpx;height:40rpx;width:570rpx;font-size:75%;padding-left:20rpx' bindconfirm="jumpToStock" placeholder=" 请输入股票代码"></input>
+</view>
+<view style='height:160rpx;background-color:#b3ced4;padding:50rpx 20rpx'>
+  <view style='display:flex;flex-direction:row;justify-content:center'>
+    <view style='width:25%;display:flex;flex-direction:column;align-items:center'>
+      <view style='padding:0 0 10rpx 0'>
+        <image style='height:100rpx;width:100rpx' src='../image/1.png'></image>
+      </view>
+      <text style='font-size:75%;'>行业网络</text>
+    </view>
+    <view style='width:25%;display:flex;flex-direction:column;align-items:center'>
+      <view style='padding:0 0 10rpx 0'>
+        <image style='height:100rpx;width:100rpx' src='../image/2.png'></image>
+      </view>
+      <text style='font-size:75%;'>数据服务</text>
+    </view>
+    <view style='width:25%;display:flex;flex-direction:column;align-items:center'>
+      <view style='padding:0 0 10rpx 0'>
+        <image style='height:100rpx;width:100rpx' src='../image/3.png'></image>
+      </view>
+      
+      <text style='font-size:75%;'>风控模型</text>
+      
+    </view>
+    <view style='width:25%;display:flex;flex-direction:column;align-items:center'>
+      <view style='padding:0 0 10rpx 0'>
+        <image style='height:100rpx;width:100rpx' src='../image/4.png'></image>
+      </view>
+      <text style='font-size:75%;'>自定义AI模型</text>
+    </view>   
+  </view>
+</view>
+<view style='margin:100rpx 0;background-color:#999900;height:80rpx;text-align:center'>
+  <view style='padding:15rpx'>上传AI模型</view>
+  <!-- <view style='width:10%;margin:10rpx;text-align:center'>
+    <image src='../image/add.png' style='height:50rpx;width:50rpx'></image>
+  </view> -->
+</view>

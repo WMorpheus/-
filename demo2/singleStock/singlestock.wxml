@@ -1,0 +1,88 @@
+<!--singleStock/singlestock.wxml-->
+<!--firstPage/firstPage.wxml-->
+<view style='display:flex;flex-direction:row;height:70rpx;margin:0 40rpx 0 40rpx;border-bottom-style:solid;border:1rpx'>
+  <image src='../image/ai.png' style='height:55rpx;width:90rpx'></image>
+  <!-- <image src='../image/fangdajing.png' style='height:50rpx;width:55rpx;border:15rpx solid #557a83;border-right-style:none;border-radius:40rpx 0 0 40rpx;'></image> -->
+  <input style='border:solid 1rpx;border-radius:25rpx;height:40rpx;width:570rpx;font-size:75%;padding-left:20rpx' bindconfirm="jumpToStock" placeholder="  请输入股票代码"></input>
+</view>
+
+<view class='contain'>
+  <view style='text-align:center;margin:0 0 20rpx 0'>
+    <view>{{name}}</view>
+    <view style='font-size:75%;color: #888888;'>{{code}}</view>
+    <view style='font-size:75%;margin:20rpx;color:#777777'>最新信号</view>
+  </view>
+  <view style='padding:20rpx 0;flex-direction:row;display:flex'>
+    <view style='width:375rpx;text-align:center'><text style='color:red'>涨：{{zhang}}</text></view>
+    <view style='width:375rpx;text-align:center'><text style='color:green'>跌：{{die}}</text></view>
+  </view>
+<!-- <view style='display:flex;flex-direction:row;justify-content:center;padding:40rpx 0;border-bottom:solid 1rpx'>
+  <button style='height:80rpx;width:230rpx;font-size:80%;color:#8c192f;border:2rpx;background-color:#d7d7d7;border-radius:30rpx'>加入自选</button>
+  <!-- <button style='button' class='button red'>加入自选</button> -->
+<!-- </view> -->
+</view>
+  <!-- <view style='text-align:center;border-top:solid 3rpx #888888;border-bottom:solid 3rpx #888888;font-size:75%' bindtap='showCanvas'>历史股价</view> -->
+  <view style='display:flex;flex-direction:row;margin:20rpx 0 0 20rpx'>
+    <view style='height:45rpx;width:140rpx;background-color:#bf4e5b;color:white;font-size:75%;text-align:center'>历史股价</view>
+  </view>
+  <view style='height:450rpx;margin:20rpx 0'>
+    <canvas canvas-id='lineCanvas' style='height:450rpx;width:750rpx'></canvas>
+  </view>
+
+  <view style='height:1400rpx;margin:20rpx'>
+    <view style='display:flex;flex-direction:row'>
+      <view style='height:45rpx;width:140rpx;background-color:#bf4e5b;color:white;font-size:75%;text-align:center'>因子数据</view>
+    </view>
+
+    <view style='height:450rpx;margin:10rpx 0'>
+      <canvas canvas-id='factorCanvas' style='height:450rpx;width:750rpx'></canvas>
+    </view>
+    <view style='height:450rpx;margin:10rpx 0'>
+      <canvas canvas-id='factorCanvas2' style='height:450rpx;width:750rpx'></canvas>
+    </view>
+    <view style='height:450rpx;margin:10rpx 0'>
+      <canvas canvas-id='factorCanvas3' style='height:450rpx;width:750rpx'></canvas>
+    </view>
+  </view>
+
+
+  <view style='height:300rpx;margin:20rpx'>
+    <view style='display:flex;flex-direction:row'>
+    <view style='height:45rpx;width:140rpx;background-color:#bf4e5b;color:white;font-size:75%;text-align:center'>最近资讯</view>
+  </view>
+  <view style='margin:10rpx 0'>
+    <view style='margin:0 20rpx'>
+     <view class='stockLine'>
+      <view class='rowCenter3'>
+        <view style='display:flex;flex-direction:column;justify-content:center'>8-23</view>
+      </view>
+      <view class='rowCenter4'>浦发银行副行长谢伟：中长期信贷投放提升 不良率持续下降</view>
+    </view>
+    
+    <view class='stockLine' bindtap='jumpToStock'>
+      <view class='rowCenter3'>
+        <view style='display:flex;flex-direction:column;justify-content:center'>8-23</view>
+      </view>
+      <view class='rowCenter4'>浦发银行：不良贷款率连续两个季度下降</view>
+    </view>
+    <view class='stockLine' bindtap='jumpToStock'>
+      <view class='rowCenter3'>
+        <view style='display:flex;flex-direction:column;justify-content:center'>8-21</view>
+      </view>
+      <view class='rowCenter4'>浦发银行大连分行跨境金融业务取得新突破</view>
+    </view>
+    <view style='display:flex;flex-direction:row;justify-content:space-between;margin:20rpx 0'>
+      <view></view>
+      <view style='display:flex;flex-direction:column'>
+        <image src='../image/more.png' style='height:35rpx;width:35rpx'></image>
+        <text style='font-size:50%;color:#888888'>更多</text>
+      </view>
+    </view>
+  </view>     
+  </view>
+</view>
+
+<button class='share-btn' id="{{code}}" bindtap='addtomy'>加入自选</button>
+
+
+

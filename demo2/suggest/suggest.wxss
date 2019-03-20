@@ -1,0 +1,26 @@
+/* suggest/suggest.wxss */
+.rowCenter{
+  width:30%;
+  text-align:center;
+  /* border-right:solid 1rpx; */
+}
+.rowCenter2{
+  width:177.5rpx;
+  text-align:center;
+  /* border-right:solid 1rpx; */
+  background-color: #F8F8F8;
+}
+.stockLine{  
+  padding:30rpx 0;
+  flex-direction:row;
+  display:flex;
+  background-color: #F8F8F8;
+  margin:10rpx 0 10rpx 0;
+  border-radius:25rpx;
+  height: 30rpx;
+  font-size:85%;
+}
+
+.hide{
+  display:none;
+}

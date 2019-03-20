@@ -1,0 +1,93 @@
+<!--firstPage/firstPage.wxml-->
+
+<!-- <view style='background-color:#C0C0C0'>
+  <view class='firstPage1'>{{time}}</view>
+</view> -->
+<view style='display:flex;flex-direction:row;justify-content:center;margin:180rpx 0 0 0'>
+  <image src='../image/ai.png' style='height:170rpx;width:300rpx'></image>
+  <!-- <text>人工智能帮你炒股</text> -->
+</view>
+<view style='text-align:center;margin:0 0 40rpx 0'><text style='color: #888888;font-size:70%'>人工智能帮你炒股</text></view>
+
+
+<view style='display:flex;flex-direction:row;height:70rpx;margin:0 40rpx 40rpx 40rpx'>
+  <image src='../image/fangdajing.png' style='height:60rpx;width:70rpx;border:20rpx solid #557a83;border-right-style:none;border-radius:40rpx 0 0 40rpx;'></image>
+  <input style='border:solid 20rpx #557a83;border-left-style:none;border-radius:0 40rpx 40rpx 0;height:60rpx;width:650rpx;font-size:80%' bindconfirm="jumpToStock" placeholder="  请输入股票代码"></input>
+</view>
+
+<view style='display:flex;flex-direction:row'>
+  <view class='point' style='background-color:#27769e;margin-left:60rpx' bindtap='jumpByTap1'>SZ000001</view>
+  <view class='point' style='background-color:#55a172' bindtap='jumpByTap2'>浦发银行</view>
+</view>
+
+  
+<!-- <view class='contain'>
+  <view style='padding:10rpx 0;text-align:center'>今日预测</view>
+  <view style='padding:20rpx 0;flex-direction:row;display:flex'>
+    <view class='rowCenter'>涨</view>
+    <view class='rowCenter'>跌</view>
+  </view>
+  <view style='padding:20rpx 0;flex-direction:row;display:flex'>
+    <view style='width:50%;text-align:center;border-right:solid 1rpx'>
+
+
+    <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:red'>0.56</view>
+    </view>
+
+
+    <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:red'>0.56</view>
+    </view>
+
+
+    <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:red'>0.56</view>
+    </view>
+
+
+    </view>
+    <view style='width:50%;text-align:center'>
+      <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:green'>0.56</view>
+    </view>
+
+
+    <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:green'>0.56</view>
+    </view>
+
+
+    <view style='padding:10rpx 0;flex-direction:row;display:flex;background-color:#F8F8F8;border-radius:25rpx;margin:10rpx 10rpx 10rpx 0'>
+      <view style='width:50%;text-align:center'>
+        <view style='text-align:center; font-size:1em;line-height:0.8em'>中国平安 
+        <view style='text-align:center; font-size:0.65em;color: #888888;padding:5rpx'>SZ000001</view> </view>
+      </view>
+      <view style='width:50%;text-align:center;color:green'>0.56</view>
+    </view>
+    </view>
+    
+  </view>
+  
+
+</view> -->
